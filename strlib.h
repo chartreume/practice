@@ -72,4 +72,45 @@ char IthChar( string s, int i );
  * inclusive. The following special cases apply:
  *
  * 1. If p1 is less than 0 , it is assumed to be 0.
- * if p2 is greater the the index of the last string
+ * 2.if p2 is greater the the index of the last string
+ * position, which is StringLength(s) - 1, then p2 is
+ * set equal to Stringlength(s) - 1.
+ *3. if p2 < p1, SubString returns the empty string.
+ */
+
+string SubString( string s, int p1 , int p2);
+
+/*
+ * Function: CharToString
+ * Usage : s = CharToString(ch);
+ * ----------------
+ * This function takes a single character and renturns a
+ * one-character string consisting of that character. The
+ * CharToString function is useful, for example, if you
+ * need to concatenate a string and a character. Since
+ * Concat requires two strings, you must first convert
+ * the character into a string.
+ */
+
+string CharToString(char ch);
+
+/*
+ * Function StringLength
+ * Usage : len = StringLength(s);
+ * -----------------
+ * This function returns the length of s.
+ */
+
+int StringLength(string s);
+
+/*
+ * Function CopyString
+ * Usage : newstr = CopyString(s);
+ * CopyString copies the string s into dynamically allocated
+ * storage and returns the new string. This function is not
+ * ordinarily required if this package is used on its own,
+ * but is often necessary when you are working with more than
+ * one string package.
+ */
+
+string CopyString(string s);
