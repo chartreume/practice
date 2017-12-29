@@ -38,7 +38,7 @@ void *GetBlock(size_t nbytes)
 
     result = malloc(nbytes);
     if (result == NULL) Error("No memory Aavailable");
-    return result;
+    return ( result );
 }
 
 void FreeBlock(void *ptr)
@@ -51,7 +51,7 @@ void FreeBlock(void *ptr)
 void Error(string msg, ...)
 {
     va_list args;
-    
+
     va_start(args,msg);
     fprintf(stderr, "Error: ");
     vfprintf(stderr, msg, args);

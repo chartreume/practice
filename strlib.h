@@ -114,3 +114,129 @@ int StringLength(string s);
  */
 
 string CopyString(string s);
+/* Section 2 -- String comparison functions */
+
+/*
+ * Function : StringEqual
+ * Usage : if ( StringEqual( s1, s2 ) ) ...
+ * --------------
+ * This function returns TRUE if the strings s1 and s2 are
+ * equal. For the strings to be considered equal, every
+ * character in one string must precisely match the
+ * corresponding character in the other. Uppercase and
+ * lowercase characters are considered to be different.
+ */
+
+bool StringEqual( string s1, string s2 );
+
+/*
+ * Function : StringCompare
+ * Usage : if ( StringCompare(s1,s2) < 0 )...
+ * -----------------
+ * This function returns a number less than 0 if string s1
+ * comes before s2 in alphabetical order, 0 if they are equal,
+ * and a number greater than 0 if s1 comes afer s2. The
+ * ordering is determined by the internal representation used
+ * for characters, which is usually ASCII.
+ */
+
+int StingCompare( string s1, string s2 );
+
+
+/* Section 3 -- Search functions */
+
+/*
+ * Function: FindChar
+ * Usage : p = FindChar(ch , text ,start);
+ * ----------
+ * Beginning at position start in the string text, this
+ * function searches for  the character ch and returns the
+ * first index at which it appears or -1 if no match is
+ * found.
+ */
+
+int FindChar( char ch , string text , int start );
+
+/*
+ * Function : FindString
+ * Usage : p = FindString( str , text , start );
+ * ----------
+ * Beginning at position start in the string text, this
+ * function searches for the string str and returns the
+ * first index at which it appears or -1 if no match is
+ * found.
+ */
+
+int FindString( string str, string text, int start );
+
+/* Section 4 -- Case-conversion functions */
+
+/*
+ * Function: ConvertToLowerCase
+ * Usage : s = ConvertToLowerCase(s);
+ * ----------
+ * This function returns a new string with all
+ * alphabetic characters converted to lower case.
+ */
+
+string ConvertToLowerCase( string s );
+
+/*
+ * Function : ConvertToUpperCase
+ * Usage : s = ConvertToUpperCase(s);
+ * -----------
+ * This function returns a new string with all
+ * alphabetic characters converted to upper case.
+ */
+
+string ConvertToUpperCase( string s );
+
+/* Section 5 -- Functions for converting numbers to strings */
+
+/*
+ * Function: IntegerToString
+ * Usage : s = IntegerToString(n);
+ * ------------------
+ * This function converts an integer into the corresponding
+ * string of digits. For example, IntegerToString(123)
+ * returns "123" as a string.
+ */
+
+string IntegerToString( int n );
+
+/*
+ * Function : StringToInteger
+ * Usage : n = StringToInteger(s);
+ * -----------
+ * This function converts a string of digits into an integer.
+ * If the string is not a legal integer or contains extraneous
+ * characters, StringToInteger signals an error condition.
+ */
+
+int StingToInteger( string s );
+
+/*
+ * Function : RealToString
+ * Usage : s = RealToString(d);
+ * --------
+ * This function converts a floating-point number into the
+ * corresponding string form. For example, calling
+ * ReakToString(23.45) returns "23.45". The conversion is
+ * the same as that used for "%G" format in printf.
+ */
+
+string RealToString( double d );
+
+/*
+ * Function : StringToReal
+ * Usage : d = StringToReal(s);
+ * -----------
+ * This function converts a string representing a real number
+ * into its corresponding value. If the string is not a
+ * legal floating-point number or if it contains extraneous
+ * characters, StringToReal signals an error condition.
+ */
+
+double StringToReal( string s );
+
+#endif
