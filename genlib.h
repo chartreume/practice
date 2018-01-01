@@ -57,6 +57,18 @@
 #endif
 
 /*
+ * Type : string
+ * The type string is identical to the type char *,which is
+ * traditionally used in C progarams. The main point of defining a
+ * new type is to improve program readability.  At the abstraction
+ * levels at which the type string is used, it is ususally not
+ * important to take the string apart into its component characters.
+ * Declaring it as string emphasizes this atomicity.
+ */
+
+typedef char *string;
+ 
+/*
  * Constant: UNDEFINED
  * -------------------
  * Beseides NULL, the only other constant of pointer type is
