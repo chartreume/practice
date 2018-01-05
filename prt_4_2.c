@@ -20,7 +20,7 @@ int main( void )
             case 6: str = "sticks";break;
             case 7: str = "heaven";break;
             case 8: str = "pate";break;
-            case 9: str = "spiine";break;
+            case 9: str = "spine";break;
             case 10: str = "shin";break;
             default: str = "";break;
         }
