@@ -22,7 +22,7 @@ socket.api={
 			var wsUrl = 'ws://'+ip+':'+port+'/spcc/cti';
 			webSocket = new WebSocket(wsUrl);
 			webSocket.onopen = function(event) {
-				OnConnect_cb(); 
+				OnConnect_cb();
 				console.log("connection success！");
 			}
 			webSocket.onclose = function(event) {
@@ -31,15 +31,15 @@ socket.api={
 				web_agentStaffid=null;
 				web_agentName=null;
 				web_skill=null;
-				
+
 				web_reg=null;
 				web_callStatue=null;
 				web_agentStatue=null;
 				web_busyStatue=null;
 				web_number=null;
-				
+
 				clearInterval(web_hearbeartID);
-				
+
 				console.log("quit success!");
 			}
 			//发送一个消息
@@ -60,7 +60,7 @@ socket.api={
 					showConsole('2',obj);
 					var name = object.name;
 					if(name=='agent status'){
-						
+
 					}
 					if(name=='call status'){
 						OnCallStatus_cb(object.call,object.number);
@@ -133,13 +133,13 @@ socket.api={
 								web_agentStaffid=null;
 								web_agentName=null;
 								web_skill=null;
-				
+
 								web_reg=null;
 								web_callStatue=null;
 								web_agentStatue=null;
 								web_busyStatue=null;
 								web_number=null;
-								
+
 								clearInterval(web_hearbeartID);
 							}
 						}
@@ -160,7 +160,7 @@ socket.api={
 										}else{
 											message+="{exten:"+tList[0]+",name:"+tList[1]+",loginId:"+tList[2]+",sector:"+tList[3]+",group:"+tList[4]+",state:"+
 											tList[5]+",busy:"+tList[6]+"},";
-										}	
+										}
 									}
 								}else{
 									var testList = test.split("|");
@@ -171,7 +171,7 @@ socket.api={
 								extensionList_cb(message);
 							}
 						}
-				}	
+				}
 			}
 			webSocket.onerror = function(event){
 					console.log(event);
@@ -385,7 +385,7 @@ socket.api={
 			strSend = 'command:hangupExtension\extension':'+extension'+'\n\n';
 			showConsole('1',strSend);
 			webSocket.send(strSend);
-		}			
+		}
 }
 function getTime(){
 	var myDate = new Date();
@@ -402,13 +402,13 @@ function sendHearbeatMessage(){
 		web_agentStaffid=null;
 		web_agentName=null;
 		web_skill=null;
-				
+
 		web_reg=null;
 		web_callStatue=null;
 		web_agentStatue=null;
 		web_busyStatue=null;
 		web_number=null;
-		web_hearbeatCount=0;*/			
+		web_hearbeatCount=0;*/
 	}
 	else{
 		web_hearbeatCount=web_hearbeatCount+1;
@@ -433,9 +433,7 @@ function showConsole(num,message){
 		}else if(num=='3'){
 			message = getTime() + '[指令响应]:{'+message +'}';
 		}
-		
+
 		console.log(message);
 	}
 }
-
-
