@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript">
+        (function(){
+            var style = document.createElement("style");
+            style.innerHTML = ":root{font-size:" + (screen.availWidth / 20 )+ "px}";
+            document.head.appendChild(style)
+        }());
+        wx.config({
+            debug : !0
+        })
+    </script>
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="management.js"></script>
+    <script type="text/javascript" src="page.js"></script>
+</head>
+<body>
+    <header>
+        <img src="x.png" />
+        <span>全小猎</span>
+    </header>
+    <div class="main">
+        <div id="js-chatbox" class="main-container">
+            <!--div class="response-block" mark="ac">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">
+                    <p>请问您想查哪个团队的？</p>
+                </div>
+            </div>
+            <div class="response-block" mark="abc">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">到12个候选人，这样查更精准：北京的张 三，我项目里的张三动态？建议 不能和用户使用的</div>
+            </div>
+            <div class="templete" data-tempid="1">
+                <div class="content">
+                    <div class="item">
+                        <div class="head"><span>张科</span><span>男/26</span></div>
+                        <p>北京</p>
+                        <p>百度科技有限公司</p>
+                        <p>产品经理</p>
+                    </div>
+                    <div class="item">
+                        <div class="head"><span>张科</span><span>男/26</span></div>
+                        <p>北京</p>
+                        <p>百度科技有限公司</p>
+                        <p>产品经理</p>
+                    </div>
+                    <div class="item">
+                        <div class="head"><span>张科</span><span>男/26</span></div>
+                        <p>北京</p>
+                        <p>百度科技有限公司</p>
+                        <p>产品经理</p>
+                    </div>
+                    <div class="item">
+                        <div class="head"><span>张科</span><span>男/26</span></div>
+                        <p>北京</p>
+                        <p>百度科技有限公司</p>
+                        <p>产品经理</p>
+                    </div>
+                    <div class="item empty">都不是</div>
+                    <div class="item empty">都不是？这样查更精准：<br>北京的张三<br>我项目里的张三<br>手机号<br>邮箱</div>
+                    <div class="right-empty"></div>
+                </div>
+            </div>
+            <div class="response-block" mark="abc">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">
+                    <div class="template" data-tempid="2">
+                        <p>告诉我候选人的姓名、手机号也可以。</p>
+                        <dl class="add-msg">
+                            <dt>还可以这样找：</dt>
+                            <dd>
+                                <ul>
+                                    <li>北京的张贝贝</li>
+                                    <li>我项目里的张贝贝</li>
+                                    <li>百度公司的张贝贝</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="response-block" mark="abc">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">找到了</div>
+            </div>
+            <div class="template" data-tempid="3">
+                <div class="temp-head"><i></i>offer金额冠军<i></i></div>
+                <div class="context">
+                    <span class="name">张贝贝</span>
+                    <strong>480,000<em>元</em></strong>
+                    <span class="date">2018年10月</span>
+                </div>
+            </div>
+            <div class="response-block" mark="abc">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">找到了</div>
+            </div>
+            <div class="template" data-tempid="4">
+                <div class="temp-head"><i></i>2018年10月offer金额冠军排名<i></i></div>
+                <div class="context">
+                    <ul>
+                        <li>
+                            <i class="icon icon-gold"></i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon icon-silver"></i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon icon-copper"></i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon">4</i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon">5</i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon">6</i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon">7</i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon">8</i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon">9</i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                        <li>
+                            <i class="icon">10</i>
+                            <span>张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="response-block" mark="abc">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">
+                    <div class="template" data-tempid="5">
+                        <div class="temp-head"><i></i>Cathy团队9月的业绩报告<i></i></div>
+                        <ul>
+                            <li><span>offer金额</span><strong>230,000元</strong></li>
+                            <li><span>offer金额</span><strong>230,000元</strong></li>
+                            <li><span>offer金额</span><strong>230,000元</strong></li>
+                            <li><span>offer金额</span><strong>230,000元</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="response-block" mark="abc">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">找到了</div>
+            </div>
+            <div class="template" data-tempid="6">
+                <div class="head">
+                    <span>张一贝</span>
+                    <i>|</i>
+                    <span>26</span>
+                    <i>|</i>
+                    <span>北京</span>
+                </div>
+                <div class="context">
+                    <p>职位：产品经理</p>
+                    <p>公司：阿里巴巴集团</p>
+                    <p>电话：17012345678</p>
+                    <p>邮箱：test@quanzhi.com</p>
+                    <p>所在项目：阿里巴巴技术有限公司大数据开发工程师（入职）</p>
+                </div>
+                <div class="tempfoot">备注：备注文字比如已经入职，文字可能会有两行</div>
+            </div>
+            <div class="response-block" mark="abc">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">找到了</div>
+            </div>
+            <div class="template" data-tempid="7">
+                <div>
+                    <div class="template" data-tempid="3">
+                        <div class="temp-head"><i></i>offer金额冠军<i></i></div>
+                        <div class="context">
+                            <span class="name">张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                            <span class="date">2018年10月</span>
+                        </div>
+                    </div>
+                    <div class="template" data-tempid="3">
+                        <div class="temp-head"><i></i>offer金额冠军<i></i></div>
+                        <div class="context">
+                            <span class="name">张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                            <span class="date">2018年10月</span>
+                        </div>
+                    </div>
+                    <div class="template" data-tempid="3">
+                        <div class="temp-head"><i></i>offer金额冠军<i></i></div>
+                        <div class="context">
+                            <span class="name">张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                            <span class="date">2018年10月</span>
+                        </div>
+                    </div>
+                    <div class="template" data-tempid="3">
+                        <div class="temp-head"><i></i>offer金额冠军<i></i></div>
+                        <div class="context">
+                            <span class="name">张贝贝</span>
+                            <strong>480,000<em>元</em></strong>
+                            <span class="date">2018年10月</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--div class="time-mark">上午 11:36</div>
+            <div class="response-block">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">请输入备注内容</div>
+            </div>
+            <div class="request-block">
+                <img src="logo.png">
+                <i></i>
+                <div class="content">请输入备注内容</div>
+            </div-->
+        </div>
+    </div>
+
+
+        <!--div class="response-block">
+            <img src="logo.png">
+            <i></i>
+            <div class="content">请输入备注内容</div>
+        </div>
+        <div class="request-block">
+            <img src="logo.png">
+            <i></i>
+            <div class="content">请输入备注内容</div>
+        </div>
+        <div class="response-block">
+            <img src="logo.png">
+            <i></i>
+            <div class="content temp-1">
+                <p>哈喽，Amy！$早上好$,九儿提醒你今天要多关注下面这些事情：</p>
+                <div class="block">
+                    <p>候选人张三要入职了</p>
+                    <p> 候选人张三入职还没有上传入职凭证</p>
+                    <p> 候选人李四要面试了</p>
+                </div>
+                <p>请问有什么可以帮你？</p>
+                <div class="btn-block">
+                    <b>找候选人</b>
+                    <b>查业绩</b>
+                    <b>查看任务</b>
+                    <b>问制度</b>
+                </div>
+            </div>
+        </div>
+        <div class="response-block">
+            <img src="logo.png">
+            <i></i>
+            <div class="content temp-1">
+                <p>请问您想查哪个团队的？</p>
+                <div class="btn-block">
+                    <b>ES1</b>
+                    <b>ES1</b>
+                    <b>ES1-综合</b>
+                </div>
+            </div>
+        </div>
+        <div class="response-block">
+            <img src="logo.png">
+            <i></i>
+            <div class="content temp-1">
+                <p>初次见面，认识一下吧～<br>我是九猎网机器人九儿，请问您是？</p>
+                <div class="btn-block">
+                    <b>绑定九猎网账号</b>
+                </div>
+            </div>
+        </div>
+        <div class="temp-2">
+            <div class="content">
+                <div class="item">
+                    <div class="head">张科&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;男/26</div>
+                    <p>北京</p>
+                    <p>百度科技有限公司</p>
+                    <p>产品经理</p>
+                </div>
+                <div class="item">
+                    <div class="head">张科&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;男/26</div>
+                    <p>北京</p>
+                    <p>百度科技有限公司</p>
+                    <p>产品经理</p>
+                </div>
+                <div class="item">
+                    <div class="head">张科&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;男/26</div>
+                    <p>北京</p>
+                    <p>百度科技有限公司</p>
+                    <p>产品经理</p>
+                </div>
+                <div class="item">
+                    <div class="head">张科&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;男/26</div>
+                    <p>北京</p>
+                    <p>百度科技有限公司</p>
+                    <p>产品经理</p>
+                </div>
+                <div class="item">
+                    <div class="head">张科&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;男/26</div>
+                    <p>北京</p>
+                    <p>百度科技有限公司</p>
+                    <p>产品经理</p>
+                </div>
+            </div>
+        </div-->
+
+
+    <footer>
+        <div class="foot-btn-box" id="js-foot-btn-box"></div>
+        <div class="common-input-toolbar hide" id="js-common-toolbar">
+            <div class="input-toolbar">
+                <img src="voice-icon.png" />
+                <input type="text" name="chat-input" />
+                <button>发送</button>
+            </div>
+            <div class="video-toobar hide">
+                <img  src="keyboard-icon.png" />
+                <button>按住输入，松开发送</button>
+            </div>
+        </div>
+        <div class="login-toolbar hide" id="js-login-toolbar" />
+            <i class="close-icon"><img src="x.png"></i>
+            <h4>绑定九猎网账号</h4>
+            <div class="input-line"><label>账号</label><input type="text" placeholder="请输入账号" name="username"></div>
+            <div class="input-line"><label>密码</label><input type="password" placeholder="请输入密码" name="pwd"></div>
+            <button type="submit" class="submit">确定</button>
+        </div>
+        <div class="textarea-toolbar hide" id="js-textarea-toolbar">
+        </div>
+    </footer>
+    <div class="cover hide" id="js-cover"></div>
+    <script>
+        wx.config({
+            debug: false,
+            appId: "signInfo.appId",
+            timestamp: "signInfo.timestamp",
+            nonceStr: "signInfo.nonceStr",
+            signature: "signInfo.signature",
+            jsApiList:["startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","onVoicePlayEnd","uploadVoice","downloadVoice","translateVoice","onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareWeibo"]
+        });
+        /*
+        wx.ready(function () {
+            //分享到朋友圈
+            wx.onMenuShareTimeline({
+                title: shareContent.title, // 分享标题
+                desc: shareContent.shareContent, // 分享描述
+                link: shareContent.lineLink, // 分享链接
+                imgUrl: shareContent.imgUrl, // 分享图标
+            });
+
+            //分享给朋友
+            wx.onMenuShareAppMessage({
+                title: shareContent.title, // 分享标题
+                desc: shareContent.shareContent, // 分享描述
+                link: shareContent.lineLink, // 分享链接
+                imgUrl: shareContent.imgUrl, // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                },
+                cancel: function () {
+                }
+            });
+
+            //分享到QQ
+            wx.onMenuShareQQ({
+                title: shareContent.title, // 分享标题
+                desc: shareContent.shareContent, // 分享描述
+                link: shareContent.lineLink, // 分享链接
+                imgUrl: shareContent.imgUrl, // 分享图标
+                success: function () {
+                },
+                cancel: function () {
+                }
+            });
+
+            //分享到腾讯微博
+            wx.onMenuShareWeibo({
+                title: shareContent.title, // 分享标题
+                desc: shareContent.shareContent, // 分享描述
+                link: shareContent.lineLink, // 分享链接
+                imgUrl: shareContent.imgUrl, // 分享图标
+                success: function () {
+                },
+                cancel: function () {
+                }
+            });
+
+        });
+        */
+    </script>
+</body>
+</html>
